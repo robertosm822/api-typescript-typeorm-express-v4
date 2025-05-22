@@ -1,4 +1,5 @@
 import { createRolesController } from '@/roles/useCases/createRole';
+import { deleteRolesController } from '@/roles/useCases/deleteRole';
 import { listRolesController } from '@/roles/useCases/listRoles';
 import { showRolesController } from '@/roles/useCases/showRole';
 import { updateRolesController } from '@/roles/useCases/updateRole';
@@ -25,6 +26,11 @@ rolesRouter.post('/roles', (request, response) => {
 /* @ts-ignore */
 rolesRouter.put('/roles/:id', (request, response) => {
   return updateRolesController.handle(request, response);
+});
+
+/* @ts-ignore */
+rolesRouter.delete('/roles/:id', (request, response) => {
+  return deleteRolesController.handle(request, response);
 });
 
 export { rolesRouter }
