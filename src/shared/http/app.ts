@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import swaggerUi from "swagger-ui-express";
 import cors from "cors";
+import { errors } from "celebrate";
 import { routes } from "./routes";
 import { AppError } from "../errors/AppError";
 import { rolesRouter } from "@/roles/http/routes/roles.routes";
@@ -15,6 +16,8 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(routes);
 app.use(rolesRouter);
+// middleware de validacao das rotas
+app.use(errors());
 
 /* @ts-ignore */
 app.use((error: Error, _request: Request, response: Response, next: NextFunction) => {
