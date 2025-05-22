@@ -5,9 +5,9 @@ class CreateRoleController {
     constructor(createRoleUseCase) {
         this.createRoleUseCase = createRoleUseCase;
     }
-    handle(request, response) {
+    async handle(request, response) {
         const { name } = request.body;
-        const role = this.createRoleUseCase.execute({ name });
+        const role = await this.createRoleUseCase.execute({ name });
         return response.status(201).json(role);
     }
 }

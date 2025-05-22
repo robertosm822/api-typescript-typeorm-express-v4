@@ -6,8 +6,8 @@ class CreateRoleUseCase {
     constructor(rolesRepository) {
         this.rolesRepository = rolesRepository;
     }
-    execute({ name }) {
-        const roleAlreadyExists = this.rolesRepository.findByName(name);
+    async execute({ name }) {
+        const roleAlreadyExists = await this.rolesRepository.findByName(name);
         if (roleAlreadyExists) {
             throw new AppError_1.AppError('Role already exists');
         }

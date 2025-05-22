@@ -5,8 +5,10 @@ class ListRolesController {
     constructor(listRolesUseCase) {
         this.listRolesUseCase = listRolesUseCase;
     }
-    handle(request, response) {
-        const roles = this.listRolesUseCase.execute();
+    async handle(request, response) {
+        const page = request.query.page && Number(request.query.page) > 0 ? Number(request.query.page) : 1;
+        const limit = request.query.limit && Number(request.query.limit) > 0 ? Number(request.query.limit) : 15;
+        const roles = await this.listRolesUseCase.execute({ page, limit });
         return response.json(roles);
     }
 }
