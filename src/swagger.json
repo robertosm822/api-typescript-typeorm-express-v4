@@ -35,16 +35,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type":"object",
+                  "type": "object",
                   "properties": {
                     "id": {
-                      "type":"string"
+                      "type": "string"
                     },
                     "name": {
-                      "type":"string"
+                      "type": "string"
                     },
                     "created_at": {
-                      "type":"string"
+                      "type": "string"
                     }
                   }
                 }
@@ -54,7 +54,7 @@
           "400": {
             "description": "Role already exists."
           },
-          "401":{
+          "401": {
             "description": "Invalid authentication token."
           }
         }
@@ -69,8 +69,8 @@
             "in": "query",
             "description": "Number of the page",
             "required": false,
-            "schema":{
-              "type":"number",
+            "schema": {
+              "type": "number",
               "example": "page=1"
             },
             "style": "label"
@@ -80,8 +80,8 @@
             "in": "query",
             "description": "Number of registers per page",
             "required": false,
-            "schema":{
-              "type":"number",
+            "schema": {
+              "type": "number",
               "example": "limit=15"
             },
             "style": "label"
@@ -90,8 +90,8 @@
         "responses": {
           "200": {
             "description": "Success.",
-            "content":{
-              "application/json":{
+            "content": {
+              "application/json": {
                 "example": {
                   "per_page": 15,
                   "total": 2,
@@ -112,7 +112,7 @@
               }
             }
           },
-          "401":{
+          "401": {
             "description": "Invalid authentication token."
           }
         }
@@ -129,20 +129,20 @@
             "in": "path",
             "description": "Identify of a role",
             "required": true,
-            "schema":{
-              "type":"string"
+            "schema": {
+              "type": "string"
             },
             "style": "label"
           }
         ],
-        "requestBody":{
-          "content":{
-            "application/json":{
-              "schema":{
-                "type":"object",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
                 "properties": {
-                  "name":{
-                    "type":"string"
+                  "name": {
+                    "type": "string"
                   }
                 },
                 "example": "Administrator"
@@ -153,19 +153,19 @@
         "responses": {
           "200": {
             "description": "Success.",
-            "content":{
-              "application/json":{
-                "schema":{
-                  "type":"object",
-                  "properties":{
-                    "id":{
-                      "type":"string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
                     },
-                    "name":{
-                      "type":"string"
+                    "name": {
+                      "type": "string"
                     },
-                    "created_at":{
-                      "type":"string"
+                    "created_at": {
+                      "type": "string"
                     }
                   }
                 },
@@ -177,10 +177,10 @@
               }
             }
           },
-          "400":{
+          "400": {
             "description": "Bad request."
           },
-          "401":{
+          "401": {
             "description": "Invalid authentication token."
           },
           "404": {
@@ -198,8 +198,8 @@
             "in": "path",
             "description": "Identify of a role",
             "required": true,
-            "schema":{
-              "type":"string"
+            "schema": {
+              "type": "string"
             },
             "style": "label"
           }
@@ -207,19 +207,19 @@
         "responses": {
           "200": {
             "description": "Success.",
-            "content":{
-              "application/json":{
-                "schema":{
-                  "type":"object",
-                  "properties":{
-                    "id":{
-                      "type":"string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
                     },
-                    "name":{
-                      "type":"string"
+                    "name": {
+                      "type": "string"
                     },
-                    "created_at":{
-                      "type":"string"
+                    "created_at": {
+                      "type": "string"
                     }
                   }
                 },
@@ -231,10 +231,10 @@
               }
             }
           },
-          "400":{
+          "400": {
             "description": "Bad request."
           },
-          "401":{
+          "401": {
             "description": "Invalid authentication token."
           },
           "404": {
@@ -252,8 +252,8 @@
             "in": "path",
             "description": "Identify of a role",
             "required": true,
-            "schema":{
-              "type":"string"
+            "schema": {
+              "type": "string"
             },
             "style": "label"
           }
@@ -262,10 +262,10 @@
           "204": {
             "description": "No content."
           },
-          "400":{
+          "400": {
             "description": "Bad request."
           },
-          "401":{
+          "401": {
             "description": "Invalid authentication token."
           },
           "404": {
@@ -275,67 +275,67 @@
       }
     },
     "/users": {
-      "post":{
-        "tags":["Users"],
-        "summary":"Create a user",
-        "description":"Create a new user",
-        "requestBody":{
-          "content":{
-            "application/json":{
-              "schema":{
-                "type":"object",
-                "properties":{
-                  "name":{
-                    "type":"string"
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a user",
+        "description": "Create a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
                   },
-                  "email":{
-                    "type":"string"
+                  "email": {
+                    "type": "string"
                   },
-                  "password":{
-                    "type":"string"
+                  "password": {
+                    "type": "string"
                   },
-                  "isAdmin":{
-                    "type":"boolean"
+                  "isAdmin": {
+                    "type": "boolean"
                   },
-                  "roleId":{
-                    "type":"string"
+                  "roleId": {
+                    "type": "string"
                   }
                 }
               }
             }
           }
         },
-        "responses":{
-          "201":{
-            "description":"User created.",
-            "content":{
-              "application/json":{
-                "schema":{
-                  "type":"object",
-                  "properties":{
-                    "id":{
-                      "type":"string"
+        "responses": {
+          "201": {
+            "description": "User created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
                     },
-                    "name":{
-                      "type":"string"
+                    "name": {
+                      "type": "string"
                     },
-                    "email":{
-                      "type":"string"
+                    "email": {
+                      "type": "string"
                     },
-                    "password":{
-                      "type":"string"
+                    "password": {
+                      "type": "string"
                     },
-                    "isAdmin":{
-                      "type":"boolean"
+                    "isAdmin": {
+                      "type": "boolean"
                     },
-                    "roleId":{
-                      "type":"string"
+                    "roleId": {
+                      "type": "string"
                     },
-                    "created_at":{
-                      "type":"string"
+                    "created_at": {
+                      "type": "string"
                     }
                   },
-                  "example":{
+                  "example": {
                     "id": "87a08fa9-d4f4-4331-ba07-b9aa4a345c88",
                     "name": "John Doe",
                     "email": "john@mail.com",
@@ -352,29 +352,29 @@
               }
             }
           },
-          "400":{
+          "400": {
             "description": "Email address already used."
           },
-          "401":{
+          "401": {
             "description": "Invalid authentication token."
           },
-          "404":{
+          "404": {
             "description": "Role not found."
           }
         }
       },
-      "get":{
-        "tags":["Users"],
+      "get": {
+        "tags": ["Users"],
         "summary": "List all users",
-        "description":"Returns all users paginated.",
-        "parameters":[
+        "description": "Returns all users paginated.",
+        "parameters": [
           {
             "name": "page",
             "in": "query",
             "description": "Number of the page",
             "required": false,
-            "schema":{
-              "type":"number",
+            "schema": {
+              "type": "number",
               "example": "page=1"
             },
             "style": "label"
@@ -384,19 +384,19 @@
             "in": "query",
             "description": "Number of registers per page",
             "required": false,
-            "schema":{
-              "type":"number",
+            "schema": {
+              "type": "number",
               "example": "limit=15"
             },
             "style": "label"
           }
         ],
-        "responses":{
-          "200":{
+        "responses": {
+          "200": {
             "description": "Success.",
-            "content":{
-              "application/json":{
-                "example":{
+            "content": {
+              "application/json": {
+                "example": {
                   "per_page": 15,
                   "total": 2,
                   "current_page": 1,
@@ -434,10 +434,10 @@
               }
             }
           },
-          "400":{
+          "400": {
             "description": "Bad request."
           },
-          "401":{
+          "401": {
             "description": "Invalid authentication token."
           }
         }
@@ -632,7 +632,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                "type": "object",
+                  "type": "object",
                   "properties": {
                     "id": {
                       "type": "string"
@@ -706,7 +706,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                "type": "object",
+                  "type": "object",
                   "properties": {
                     "id": {
                       "type": "string"
