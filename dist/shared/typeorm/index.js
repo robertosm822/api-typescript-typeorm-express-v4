@@ -6,10 +6,11 @@ const _1747924088667_CreateRolesTable_1 = require("./migrations/1747924088667-Cr
 const Role_1 = require("../../roles/entities/Role");
 const _1748283713791_CreateUsersTable_1 = require("./migrations/1748283713791-CreateUsersTable");
 const _1657997456404_AddRoleIdToUsersTable_1 = require("./migrations/1657997456404-AddRoleIdToUsersTable");
+const User_1 = require("@/users/entities/User");
 exports.dataSource = new typeorm_1.DataSource({
     type: 'sqlite',
     database: './db.sqlite',
-    entities: [Role_1.Role],
+    entities: [Role_1.Role, User_1.User],
     migrations: [
         _1747924088667_CreateRolesTable_1.CreateRolesTable1747924088667,
         _1748283713791_CreateUsersTable_1.CreateUsersTable1748283713791,
