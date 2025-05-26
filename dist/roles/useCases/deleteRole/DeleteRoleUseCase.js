@@ -12,31 +12,25 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateRoleUseCase = void 0;
+exports.DeleteRoleUseCase = void 0;
 const AppError_1 = require("@/shared/errors/AppError");
 const tsyringe_1 = require("tsyringe");
-let UpdateRoleUseCase = class UpdateRoleUseCase {
+let DeleteRoleUseCase = class DeleteRoleUseCase {
     constructor(rolesRepository) {
         this.rolesRepository = rolesRepository;
     }
-    async execute({ id, name }) {
+    async execute({ id }) {
         const role = await this.rolesRepository.findById(id);
         if (!role) {
             throw new AppError_1.AppError('Role not found', 404);
         }
-        // verificar se existe algum com mesmo nome
-        const roleWithSameName = await this.rolesRepository.findByName(name);
-        if (roleWithSameName && role.name !== roleWithSameName.name) {
-            throw new AppError_1.AppError('Role name not informed or already in use');
-        }
-        role.name = name;
-        return this.rolesRepository.save(role);
+        await this.rolesRepository.delete(role);
     }
 };
-exports.UpdateRoleUseCase = UpdateRoleUseCase;
-exports.UpdateRoleUseCase = UpdateRoleUseCase = __decorate([
+exports.DeleteRoleUseCase = DeleteRoleUseCase;
+exports.DeleteRoleUseCase = DeleteRoleUseCase = __decorate([
     (0, tsyringe_1.injectable)(),
     __param(0, (0, tsyringe_1.inject)('RolesRepository')),
     __metadata("design:paramtypes", [Object])
-], UpdateRoleUseCase);
-//# sourceMappingURL=UpdateRoleUseCase.js.map
+], DeleteRoleUseCase);
+//# sourceMappingURL=DeleteRoleUseCase.js.map

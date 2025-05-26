@@ -6,7 +6,7 @@ import { routes } from "./routes";
 import { AppError } from "../errors/AppError";
 import { rolesRouter } from "@/roles/http/routes/roles.routes";
 import swaggerFile from "../../swagger.json";
-import '@shared/container';
+import '../../shared/container';
 
 const app = express();
 

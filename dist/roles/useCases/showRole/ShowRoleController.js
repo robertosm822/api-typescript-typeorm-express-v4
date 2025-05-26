@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShowRoleController = void 0;
+const ShowRoleUseCase_1 = require("./ShowRoleUseCase");
+const tsyringe_1 = require("tsyringe");
 class ShowRoleController {
-    constructor(showRoleUseCase) {
-        this.showRoleUseCase = showRoleUseCase;
-    }
     async handle(request, response) {
+        const showRoleUseCase = tsyringe_1.container.resolve(ShowRoleUseCase_1.ShowRoleUseCase);
         const { id } = request.params;
-        const role = await this.showRoleUseCase.execute({ id });
+        const role = await showRoleUseCase.execute({ id });
         return response.status(200).json(role);
     }
 }

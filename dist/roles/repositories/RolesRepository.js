@@ -10,13 +10,14 @@ class RolesRepository {
     }
     /**
      * Metodo no padrao singleton
-     */
-    static getIntance() {
-        if (!RolesRepository.INSTANCE) {
-            RolesRepository.INSTANCE = new RolesRepository();
-        }
-        return RolesRepository.INSTANCE;
+  
+    public static getIntance(): RolesRepository {
+      if (!RolesRepository.INSTANCE) {
+        RolesRepository.INSTANCE = new RolesRepository()
+      }
+      return RolesRepository.INSTANCE
     }
+    */
     async create({ name }) {
         const role = this.repository.create({ name });
         return this.repository.save(role);
