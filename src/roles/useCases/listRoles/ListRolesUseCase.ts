@@ -1,5 +1,5 @@
-import { Role } from "@/roles/entities/Role";
-import { RolesPaginateProperties, RolesRepository } from "@/roles/repositories/RolesRepository";
+import { RolesPaginateProperties } from "@/roles/repositories/IRolesRepository";
+import { RolesRepository } from "@/roles/repositories/RolesRepository";
 
 type ListRolesUseCaseParams = {
   page: number;
