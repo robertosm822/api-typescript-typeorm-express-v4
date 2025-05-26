@@ -1,4 +1,4 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("@roles/container");
+require("../../../src/roles/container");
 //# sourceMappingURL=index.js.map
