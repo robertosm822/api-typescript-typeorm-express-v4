@@ -6,6 +6,7 @@ import { CreateUserController } from "../useCases/createUser/CreateUserControlle
 const userRouter = Router();
 const createUserController = container.resolve(CreateUserController);
 
+
 userRouter.post('/', celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
@@ -15,8 +16,9 @@ userRouter.post('/', celebrate({
       roleId: Joi.string().uuid().required()
     },
   }),
+  /* @ts-ignore */
   (request, response) => {
-    createUserController.handle(request, response);
+    return createUserController.handle(request, response);
   }
 );
 

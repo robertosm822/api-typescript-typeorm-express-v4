@@ -16,13 +16,13 @@ const updateRolesController = container.resolve(UpdateRoleController);
 const deleteRolesController = container.resolve(DeleteRoleController);
 
 /* @ts-ignore */
-rolesRouter.get('/roles', (request, response) => {
+rolesRouter.get('/', (request, response) => {
 
   return listRolesController.handle(request, response);
 });
 
 
-rolesRouter.get('/roles/:id', celebrate({
+rolesRouter.get('/:id', celebrate({
   [Segments.PARAMS]: Joi.object().keys({
     id: Joi.string().uuid().required(),
   })
@@ -32,7 +32,7 @@ rolesRouter.get('/roles/:id', celebrate({
 });
 
 
-rolesRouter.post('/roles',celebrate({
+rolesRouter.post('/',celebrate({
   [Segments.BODY]: Joi.object().keys({
     name: Joi.string().required(),
   })
@@ -42,7 +42,7 @@ rolesRouter.post('/roles',celebrate({
 });
 
 
-rolesRouter.put('/roles/:id',celebrate({
+rolesRouter.put('/:id',celebrate({
   [Segments.BODY]: Joi.object().keys({
     name: Joi.string().required(),
   })
@@ -56,7 +56,7 @@ rolesRouter.put('/roles/:id',celebrate({
 });
 
 /* @ts-ignore */
-rolesRouter.delete('/roles/:id',  celebrate({
+rolesRouter.delete('/:id',  celebrate({
   [Segments.PARAMS]: Joi.object().keys({
     id: Joi.string().uuid().required(),
   })

@@ -1,5 +1,6 @@
 import { rolesRouter } from "@/roles/http/routes/roles.routes";
 import { AppError } from "@/shared/errors/AppError";
+import { userRouter } from "@/users/http/users.routes";
 import { Router } from "express";
 
 const routes = Router();
@@ -12,7 +13,7 @@ routes.get('/', (request, response) => {
     message: "Ok"
   });
 });
-
-routes.use('/users', rolesRouter);
+routes.use('/roles', rolesRouter);
+routes.use('/users', userRouter);
 
 export {routes};

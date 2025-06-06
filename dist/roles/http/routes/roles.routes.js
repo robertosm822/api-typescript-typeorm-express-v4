@@ -17,10 +17,10 @@ const createRolesController = tsyringe_1.container.resolve(CreateRoleController_
 const updateRolesController = tsyringe_1.container.resolve(UpdateRoleController_1.UpdateRoleController);
 const deleteRolesController = tsyringe_1.container.resolve(DeleteRoleController_1.DeleteRoleController);
 /* @ts-ignore */
-rolesRouter.get('/roles', (request, response) => {
+rolesRouter.get('/', (request, response) => {
     return listRolesController.handle(request, response);
 });
-rolesRouter.get('/roles/:id', (0, celebrate_1.celebrate)({
+rolesRouter.get('/:id', (0, celebrate_1.celebrate)({
     [celebrate_1.Segments.PARAMS]: celebrate_1.Joi.object().keys({
         id: celebrate_1.Joi.string().uuid().required(),
     })
@@ -28,7 +28,7 @@ rolesRouter.get('/roles/:id', (0, celebrate_1.celebrate)({
 }), (request, response) => {
     return showRolesController.handle(request, response);
 });
-rolesRouter.post('/roles', (0, celebrate_1.celebrate)({
+rolesRouter.post('/', (0, celebrate_1.celebrate)({
     [celebrate_1.Segments.BODY]: celebrate_1.Joi.object().keys({
         name: celebrate_1.Joi.string().required(),
     })
@@ -36,7 +36,7 @@ rolesRouter.post('/roles', (0, celebrate_1.celebrate)({
 }), (request, response) => {
     return createRolesController.handle(request, response);
 });
-rolesRouter.put('/roles/:id', (0, celebrate_1.celebrate)({
+rolesRouter.put('/:id', (0, celebrate_1.celebrate)({
     [celebrate_1.Segments.BODY]: celebrate_1.Joi.object().keys({
         name: celebrate_1.Joi.string().required(),
     })
@@ -49,7 +49,7 @@ rolesRouter.put('/roles/:id', (0, celebrate_1.celebrate)({
     return updateRolesController.handle(request, response);
 });
 /* @ts-ignore */
-rolesRouter.delete('/roles/:id', (0, celebrate_1.celebrate)({
+rolesRouter.delete('/:id', (0, celebrate_1.celebrate)({
     [celebrate_1.Segments.PARAMS]: celebrate_1.Joi.object().keys({
         id: celebrate_1.Joi.string().uuid().required(),
     })
