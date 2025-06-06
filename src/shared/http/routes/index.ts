@@ -1,3 +1,4 @@
+import { rolesRouter } from "@/roles/http/routes/roles.routes";
 import { AppError } from "@/shared/errors/AppError";
 import { Router } from "express";
 
@@ -11,5 +12,7 @@ routes.get('/', (request, response) => {
     message: "Ok"
   });
 });
+
+routes.use('/users', rolesRouter);
 
 export {routes};
